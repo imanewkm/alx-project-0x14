@@ -1,17 +1,15 @@
-import React from 'react';
+import { ComponentProps } from "@/interfaces";
+import Header from "./Header";
+import Footer from "./Footer";
 
-interface BaseProps {
-    children: React.ReactNode;
+const Layout: React.FC<ComponentProps> = ({ children }) => {
+  return (
+    <>
+      <Header />
+      <main className="min-h-screen">{children}</main>
+      <Footer />
+    </>
+  )
 }
 
-const Base: React.FC<BaseProps> = ({ children }) => {
-    return (
-        <div className="min-h-screen bg-gray-100">
-            <main>
-                {children}
-            </main>
-        </div>
-    );
-};
-
-export default Base;
+export default Layout;
